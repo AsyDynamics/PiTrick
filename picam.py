@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+#!/usr/bin/env python2
 # original script by brainflakes, improved by pageauc, peewee2 and Kesthal
 # www.raspberrypi.org/phpBB3/viewtopic.php?f=43&t=45235
 
