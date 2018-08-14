@@ -19,9 +19,9 @@ PHOTOFORMAT = 'jpeg'
 def camCapture(filename):
     with picamera.PiCamera() as camera:
         camera.resolution = (1024,768)
-        camera.rotation = 0
+        camera.rotation = 180
         print("Photo: %s"%filename + "." + PHOTOFORMAT)
-        time.sleep(5)
+        time.sleep(3)
         camera.capture(filename + '.' + PHOTOFORMAT, format=PHOTOFORMAT)
         print("Photo captured and saved ...")
         return filename + '.' + PHOTOFORMAT

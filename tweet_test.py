@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys 
 from twython import Twython
-tweetStr = "Lucky to get the password of the router, and set the DMZ configure of the RPI at home, make it sshable via internet. This twitter is post by a python script running on raspberry pi :)"
+tweetStr = "Gcloud works fine, but with voc 2012, the training of tiny yolo got stuck. This twitter is post by a python script running on raspberry pi :)"
 # your twitter consumer and access information goes here note: these are
 # garbage strings and won't work
 apiKey = 'Kyn90AnEUy83Or7FpSBvopjtJ'

@@ -20,19 +20,19 @@ from PIL import Image
 # filenamePrefix     - string that prefixes the file name for easier identification of files.
 # diskSpaceToReserve - Delete oldest images to avoid filling disk. How much byte to keep free on disk.
 # cameraSettings     - "" = no extra settings; "-hf" = Set horizontal flip of image; "-vf" = Set vertical flip; "-hf -vf" = both horizontal and vertical flip
-threshold = 10
-sensitivity = 20
+threshold = 50
+sensitivity = 50
 forceCapture = True
 forceCaptureTime = 60 * 60 # Once an hour
-filepath = "/home/pi/picam"
+filepath = "/media/pi/myUSB/picam"
 filenamePrefix = "capture"
 diskSpaceToReserve = 80 * 1024 * 1024 # Keep 40 mb free on disk
 cameraSettings = ""
 
 # settings of the photos to save
-saveWidth   = 1296
-saveHeight  = 972
-saveQuality = 15 # Set jpeg quality (0 to 100)
+saveWidth   = 1600
+saveHeight  = 900
+saveQuality = 20 # Set jpeg quality (0 to 100)
 
 # Test-Image settings
 testWidth = 100
@@ -66,7 +66,7 @@ debugMode = False # False or True
 
 # Capture a small test image (for motion detection)
 def captureTestImage(settings, width, height):
-    command = "raspistill %s -w %s -h %s -t 200 -e bmp -rot 180 -n -o -" % (settings, width, height)
+    command = "raspistill %s -w %s -h %s -t 200 -e bmp -rot 0 -n -o -" % (settings, width, height)
     imageData = StringIO.StringIO()
     imageData.write(subprocess.check_output(command, shell=True))
     imageData.seek(0)
