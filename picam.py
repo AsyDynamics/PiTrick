@@ -24,14 +24,14 @@ threshold = 50
 sensitivity = 50
 forceCapture = True
 forceCaptureTime = 60 * 60 # Once an hour
-filepath = "/media/pi/myUSB/picam"
+filepath = "/home/pi/Pictures/motion_detected/"
 filenamePrefix = "capture"
-diskSpaceToReserve = 80 * 1024 * 1024 # Keep 40 mb free on disk
-cameraSettings = ""
+diskSpaceToReserve = 80 * 1024 * 1024 # Keep 80 mb free on disk
+cameraSettings = "-vf"
 
 # settings of the photos to save
-saveWidth   = 1600
-saveHeight  = 900
+saveWidth   = 800
+saveHeight  = 450
 saveQuality = 20 # Set jpeg quality (0 to 100)
 
 # Test-Image settings
@@ -66,7 +66,7 @@ debugMode = False # False or True
 
 # Capture a small test image (for motion detection)
 def captureTestImage(settings, width, height):
-    command = "raspistill %s -w %s -h %s -t 200 -e bmp -rot 0 -n -o -" % (settings, width, height)
+    command = "raspistill %s -w %s -h %s -t 200 -e bmp -hf -rot 0 -n -o -" % (settings, width, height)
     imageData = StringIO.StringIO()
     imageData.write(subprocess.check_output(command, shell=True))
     imageData.seek(0)
