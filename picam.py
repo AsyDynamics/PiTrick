@@ -20,14 +20,14 @@ from PIL import Image
 # filenamePrefix     - string that prefixes the file name for easier identification of files.
 # diskSpaceToReserve - Delete oldest images to avoid filling disk. How much byte to keep free on disk.
 # cameraSettings     - "" = no extra settings; "-hf" = Set horizontal flip of image; "-vf" = Set vertical flip; "-hf -vf" = both horizontal and vertical flip
-threshold = 80
-sensitivity = 100
+threshold = 30
+sensitivity = 30
 forceCapture = True
 forceCaptureTime = 60 * 60 # Once an hour
 filepath = "/home/pi/Pictures/motion_detected/"
 filenamePrefix = "capture"
 diskSpaceToReserve = 80 * 1024 * 1024 # Keep 80 mb free on disk
-cameraSettings = "-vf"
+cameraSettings = "-vf -hf"
 
 # settings of the photos to save
 saveWidth   = 800
