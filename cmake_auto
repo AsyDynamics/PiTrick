@@ -1,0 +1,27 @@
+#!/bin/bash
+
+read -p "Enter project name: " project_name
+read -p "Enter cmake version: " cmake_v
+read -p "Enter executable name: " out_name
+
+mkdir $project_name
+mkdir $project_name/src
+mkdir $project_name/bin
+mkdir $project_name/build
+
+cd $project_name
+echo "project($project_name)" > CMakeLists.txt
+echo "cmake_minimum_required(VERSION $cmake_v)" >> CMakeLists.txt
+echo "add_executable($out_name src/main.cpp)" >> CMakeLists.txt
+echo -e "set(EXECUTABLE_OUTPUT_PATH \${PROJECT_SOURCE_DIR}/bin)" >> CMakeLists.txt
+
+cat >> src/main.cpp <<EOF
+#include <iostream>
+using namespace std;
+
+int main(){
+	cout << "Enter main\n";
+
+	return 0;
+}
+EOF

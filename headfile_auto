@@ -1,0 +1,15 @@
+#!/bin/bash
+
+read -p "Enter headfile name: " head
+HEAD=$(echo $head| tr '[a-z]' '[A-Z]')
+
+echo $head
+echo $HEAD
+
+cat>>$head.h<<EOF
+#ifndef ${HEAD}_H
+#define ${HEAD}_H
+
+
+#endif
+EOF
