@@ -24,7 +24,7 @@ else:
 # initialize the first frame in the video stream
 firstFrame = None
 
-Basic motion detection and tracking with Python and OpenCVPython
+# Basic motion detection and tracking with Python and OpenCVPython
 
 # loop over the frames of the video
 while True:
@@ -86,7 +86,7 @@ while True:
 	key = cv2.waitKey(1) & 0xFF
 
 	# if the `q` key is pressed, break from the lop
-	if key == ord("q"):
+	if ((key == ord("q"))| (key == 27)):
 		break
 
 # cleanup the camera and close any open windows
