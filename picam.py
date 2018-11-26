@@ -23,8 +23,8 @@ from PIL import Image
 # filenamePrefix     - string that prefixes the file name for easier identification of files.
 # diskSpaceToReserve - Delete oldest images to avoid filling disk. How much byte to keep free on disk.
 # cameraSettings     - "" = no extra settings; "-hf" = Set horizontal flip of image; "-vf" = Set vertical flip; "-hf -vf" = both horizontal and vertical flip
-threshold = 60
-sensitivity = 100
+threshold = 50
+sensitivity = 50
 forceCapture = True
 forceCaptureTime = 60 * 60 # Once an hour
 filepath = "/home/pi/Pictures/motion_detected/"
@@ -38,8 +38,10 @@ saveHeight  = 450
 saveQuality = 20 # Set jpeg quality (0 to 100)
 
 # Test-Image settings
-testWidth = 100
-testHeight = 75
+#testWidth = 100
+#testHeight = 75
+testWidth  = saveWidth
+testHeight = saveHeight
 
 # this is the default setting, if the whole image should be scanned for changed pixel
 testAreaCount = 1

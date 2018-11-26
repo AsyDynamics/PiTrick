@@ -41,6 +41,7 @@ while True:
 	# grab the frame from the threaded video stream and resize it
 	# to have a maximum width of 400 pixels
 	frame = vs.read()
+	frame = cv2.flip(frame, -1)
 	frame = imutils.resize(frame, width=400)
 
 	# grab the frame dimensions and convert it to a blob
